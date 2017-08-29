@@ -1,11 +1,9 @@
 package com.example.android.mybooklist;
 
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,7 +47,7 @@ public class Utils {
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
 
-        // If the URL is null, then return early.
+
         if (url == null) {
             return jsonResponse;
         }
@@ -86,10 +84,7 @@ public class Utils {
         return jsonResponse;
     }
 
-    /**
-     * Convert the {@link InputStream} into a String which contains the
-     * whole JSON response from the server.
-     */
+
     private static String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder output = new StringBuilder();
         if (inputStream != null) {
@@ -112,7 +107,7 @@ public class Utils {
             JSONObject baseJsonResponse = new JSONObject(jsonResponse);
             JSONArray itemsArray = baseJsonResponse.getJSONArray("items");
 
-            // If there are results in the features array
+
             if (itemsArray.length() > 0) {
 
                 for (int i = 0; i < itemsArray.length(); i++) {

@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     }
 
                 } else {
-                    // No network connection
+
 
                     Toast toast = Toast.makeText(context, getString(R.string.no_connection), duration);
                     toast.show();
@@ -108,6 +107,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             textNoDataFound.setVisibility(View.GONE);
             listView.setAdapter(mAdapter);
             listView.setVisibility(View.VISIBLE);
+        }else {
+
+         textNoDataFound.setText(getString(R.string.no_book_found));
+           textNoDataFound.setVisibility(View.VISIBLE);
+            listView.setVisibility(View.GONE);
+
         }
     }
 
